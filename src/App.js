@@ -1,57 +1,21 @@
 
 import './App.css';
-
+import Header from './components/headers';
+import Post from './components/post'
+import {Route, Routes} from 'react-router-dom'
+import Layout from './layout';
 function App() {
   return (
-    <main>
-      <header>
-        <a href='/' className='logo'>MyBlog</a>
-        <nav>
-          <a href='/' className=''>Login</a>
-          <a href='/' className=''>Register</a>
-        </nav>
-      </header>
-      
-      <div className='post'>
-        <div className='image'>
-          <img src='https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='entry-img'></img>
-        </div>
-        <div className='texts'>
-        <h2>Ut est ipsum eu officia cupidatat esse duis.</h2>
-        <p>Ea mollit elit id proident sit minim nulla anim. Elit amet incididunt aliquip dolor sit dolor fugiat adipisicing. Cillum qui officia laboris sint in excepteur magna exercitation.</p>
-        </div>
-      </div>
+  <Routes>
+    <Route path='/' element={<Layout/>}>
+      <Route index element={<Post/>}/>
+      <Route path={'/login'} element={<div> login</div>}/>
+      <Route path={'/register'} element={<div> register</div>}/>
+    </Route>
+  
+  </Routes>
 
-
-      <div className='post'>
-        <div className='image'>
-          <img src='https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='entry-img'></img>
-        </div>
-        <div className='texts'>
-        <h2>Ut est ipsum eu officia cupidatat esse duis.</h2>
-        <p className='info'>
-          <a className='author' href='/'> Thanh Phat Lam</a>
-          <time>2023-11-11</time>
-        </p>
-        <p className='summary'>Ea mollit elit id proident sit minim nulla anim. Elit amet incididunt aliquip dolor sit dolor fugiat adipisicing. Cillum qui officia laboris sint in excepteur magna exercitation.</p>
-        </div>
-      </div>
-
-      <div className='post'>
-        <div className='image'>
-          <img src='https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='entry-img'></img>
-        </div>
-        <div className='texts'>
-        <h2>Ut est ipsum eu officia cupidatat esse duis.</h2>
-        <p>Ea mollit elit id proident sit minim nulla anim. Elit amet incididunt aliquip dolor sit dolor fugiat adipisicing. Cillum qui officia laboris sint in excepteur magna exercitation.</p>
-        </div>
-      </div>
-
-
-      
-
-     
-    </main>
+   
   );
 }
 

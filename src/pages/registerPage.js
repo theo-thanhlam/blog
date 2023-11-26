@@ -1,10 +1,12 @@
-
+import '../styles/Form.css'
 import React, { useState } from 'react'
 
 const RegisterPage = () => {
 
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   async function  register(event){
     event.preventDefault();
@@ -16,7 +18,8 @@ const RegisterPage = () => {
 
     if(response.status === 200){
       alert("Registration successful");
-    }else {
+    }
+    else {
       alert("Registration failed");
     }
   }
@@ -26,6 +29,12 @@ const RegisterPage = () => {
   return (
     <form className='register' onSubmit={register}>
       <h1>Register</h1>
+      <input 
+        type="text" 
+        placeholder='Enter your name' 
+        value={name}
+        onChange={e => setName(e.target.value)}
+        />
       {/* Username */}
         <input 
         type="email" 

@@ -1,16 +1,25 @@
-export default function Post() {
+import TimeAgo from 'react-timeago';
+import {format} from 'date-fns'
+import { Link } from 'react-router-dom';
+
+export default function Post({_id,title, cover, content, createdAt, author}) {
   return (
     <div className='post'>
         <div className='image'>
-          <img src='https://images.pexels.com/photos/1421903/pexels-photo-1421903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='entry-img'></img>
+          <Link to={`/post/${_id}`}>
+            <img src={`http://localhost:3001/${cover}`} alt='entry-img'></img>
+          </Link>
         </div>
         <div className='texts'>
-        <h2>Ut est ipsum eu officia cupidatat esse duis.</h2>
+        <Link to={`/post/${_id}`}>
+          <h2>{title}</h2>         
+        </Link>
+        
         <p className='info'>
-          <a className='author' href='/'> Thanh Phat Lam</a>
-          <time>2023-11-11</time>
+          <a className='author' href='/'> {author.name}</a>
+          <time>{format(new Date(createdAt), "MMM d, yyyy")}</time>
+          <TimeAgo date={createdAt}/>
         </p>
-        <p className='summary'>Ea mollit elit id proident sit minim nulla anim. Elit amet incididunt aliquip dolor sit dolor fugiat adipisicing. Cillum qui officia laboris sint in excepteur magna exercitation.</p>
         </div>
       </div>
   )

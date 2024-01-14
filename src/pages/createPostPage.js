@@ -16,7 +16,7 @@ const CreatePostPage = () => {
     data.set("title", title);
     data.set("content", content);
     data.set("file", files[0]);
-    const response = await fetch("http://localhost:3001/create-post", {
+    const response = await fetch(`${process.env.REACT_APP_API}/create-post`, {
       method: "POST",
       body: data,
       credentials: "include",

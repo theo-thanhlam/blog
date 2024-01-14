@@ -11,15 +11,14 @@ export default function Header(){
 
   useEffect(() => {
     async function getProfile(){
-      const userDoc = await fetch("http://localhost:3001/profile", {credentials:'include'}).then(response => response.json());
+      const userDoc = await fetch(`${process.env.REACT_APP_API}/profile`, {credentials:'include'}).then(response => response.json());
       setUserInfo(userDoc)
     }
     getProfile();
-  }, 
-  []);
+  });
 
   function logout(){
-    fetch("http://localhost:3001/logout", {
+    fetch(`${process.env.REACT_APP_API}/logout`, {
       credentials:'include',
       method:"POST"
     });

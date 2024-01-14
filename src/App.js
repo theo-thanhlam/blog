@@ -8,6 +8,7 @@ import { UserContextProvider } from "./UserContext";
 import CreatePostPage from "./pages/createPostPage";
 import SinglePostPage from "./pages/singlePostPage";
 import EditPost from "./pages/editPostPage";
+import NotFoundPage from "./pages/notFoundPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/create-post"} element={<CreatePostPage />} />
           <Route path="/post/:id" element={<SinglePostPage />} />
           <Route path="/edit/:id" element={<EditPost />} />
+          <Route path="*" element={<NotFoundPage />}></Route>
         </Route>
       </Routes>
     </UserContextProvider>

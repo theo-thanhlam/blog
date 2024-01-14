@@ -12,9 +12,9 @@ const SinglePostPage = () => {
 
   useEffect(() => {
     async function fetchPostById() {
-      const postDoc = await fetch(`http://localhost:3001/post/${id}`).then(
-        (response) => response.json()
-      );
+      const postDoc = await fetch(
+        `${process.env.REACT_APP_API}/post/${id}`
+      ).then((response) => response.json());
       setpostInfo(postDoc);
     }
     fetchPostById();
@@ -25,7 +25,7 @@ const SinglePostPage = () => {
         <div className="post-page">
           <div className="image">
             <img
-              src={`http://localhost:3001/${postInfo.cover}`}
+              src={`${process.env.REACT_APP_API}/${postInfo.cover}`}
               alt="Post Cover"
             />
           </div>

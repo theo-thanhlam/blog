@@ -33,7 +33,7 @@ export default function Header(){
         <nav>
           {email && (
             <>
-              <Link to='/create-post' className=''>Create new post</Link>
+              <Link to='/post/create' className=''>Create new post</Link>
               <Link onClick={logout} className=''>Sign out</Link>
             </>
           )}

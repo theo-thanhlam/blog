@@ -18,9 +18,9 @@ function App() {
           <Route index element={<IndexPage />} />
           <Route path={"/login"} element={<LoginPage />} />
           <Route path={"/register"} element={<RegisterPage />} />
-          <Route path={"/create-post"} element={<CreatePostPage />} />
+          <Route path={"/post/create"} element={<CreatePostPage />} />
           <Route path="/post/:id" element={<SinglePostPage />} />
-          <Route path="/edit/:id" element={<EditPost />} />
+          <Route path="/post/edit/:id" element={<EditPost />} />
           <Route path="*" element={<NotFoundPage />}></Route>
         </Route>
       </Routes>

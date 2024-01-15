@@ -50,7 +50,7 @@ const SinglePostPage = () => {
               <div className="edit-post">
                 {userInfo && userInfo.id === postInfo.author._id && (
                   <div>
-                    <Link to={`/edit/${postInfo._id}`}>Edit Post</Link>
+                    <Link to={`/post/edit/${postInfo._id}`}>Edit Post</Link>
                   </div>
                 )}
               </div>

@@ -29,7 +29,7 @@ const EditPost = () => {
     if (files?.[0]) {
       data.set("file", files?.[0]);
     }
-    const response = await fetch(`${process.env.REACT_APP.API}/post`, {
+    const response = await fetch(`${process.env.REACT_APP_API}/post`, {
       method: "PUT",
       body: data,
       credentials: "include",
@@ -59,7 +59,7 @@ const EditPost = () => {
       />
       {/* Blog's Content */}
       <Editor onChange={setContent} value={content} />
-      <button>Create Post</button>
+      <button>Edit Post</button>
     </form>
   );
 };

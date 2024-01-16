@@ -24,10 +24,7 @@ const SinglePostPage = () => {
       {postInfo && (
         <div className="post-page">
           <div className="image">
-            <img
-              src={`${process.env.REACT_APP_API}/${postInfo.cover}`}
-              alt="Post Cover"
-            />
+            <img src={`${postInfo.cover}`} alt="Post Cover" />
           </div>
 
           <div className="postInfo">

@@ -7,7 +7,6 @@ import { UserContext } from "../UserContext";
 
 export default function Header(){
   const {setUserInfo, userInfo} = useContext(UserContext)
-  const email = userInfo?.email;
 
   useEffect(() => {
     async function getProfile(){
@@ -31,13 +30,13 @@ export default function Header(){
         <header>
         <Link to='/' className='logo'>MyBlog</Link>
         <nav>
-          {email && (
+          {userInfo && (
             <>
               <Link to='/post/create' className=''>Create new post</Link>
               <Link onClick={logout} className=''>Sign out</Link>
             </>
           )}
-          {!email && (
+          {!userInfo && (
             <>
               <Link to='/login' className=''>Login</Link>
               <Link to='/register' className=''>Register</Link>
